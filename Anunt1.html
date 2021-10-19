@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <title>Acasa</title>
+    <style>
+        body {
+            background-image: url("img/background-login.png");
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+<!-- Meniu -->
+    <nav class="navbar navbar-expand-lg navbar-light "
+        style="background-color:#85c441;font-family: 'Raleway', sans-serif;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">AIA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="Acasa.html">Acasa</a>
+                    <a class="nav-link" href="Cursuri.php">Cursuri</a>
+                    <a class="nav-link" href="Profil.php">Profil</a>
+
+                </div>
+
+                <a href="Delogare.php" class="btn btn-success ms-auto">Delogare</a>
+
+            </div>
+        </div>
+    </nav>
+    <div class="container bg-white"style="width:50%">
+        <h1 class="text-center">SCSS</h1>
+        <p>A 13-a Sesiune Studențească de Comunicări Științifice (S.S.C.S.) este o competiție anuală organizată de facultate cu scopul de a ajuta 
+            studenții să se pregătească pentru sustinerea lucrarii de licență ce se va ține pe data de 5 Iulie in sesiunea de vară și pe data de 7 Septembrie 
+            pentru sesiunea de toamna.</p>
+            <p> 
+                Această manifestare este un bun prilej de familiarizare a studenților cu activitatea de elaborare a unei lucrări științifice, dezvoltarea abilităților de comunicare și, nu în ultimul rând, este un exercițiu util în vederea elaborării și susținerii tezelor de licență și masterat.</p>
+       <p>   Pentru a putea participa,studenții trebuie sa completeze următorul formular până pe data de 20 Mai:</p>
+      
+       <form action="Salvare-formular.php" method="POST">
+       <div class="my-3 " style="width:50%">
+
+        <label for="exampleFormControlInput1" class="form-label" >Nume</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" name='nume' >
+
+        <label for="exampleFormControlInput2" class="form-label">Prenume</label>
+        <input type="text" class="form-control" id="exampleFormControlInput2" name='prenume' >
+
+        <label for="exampleFormControlInput3" class="form-label" >Facultate</label>
+        <input type="text" class="form-control" id="exampleFormControlInput3" name='facultate' >
+
+        <label for="exampleFormControlInput4" class="form-label" >An de studiu</label>
+        <input type="text" class="form-control" id="exampleFormControlInput4" name='an' >
+
+        <label for="exampleFormControlInput5" class="form-label">Sesiune sustinere lucrare de licență</label>
+        <input type="text" class="form-control mb-3" id="exampleFormControlInput5" name='sesiune'>
+
+        <center><input type="submit" class="btn mb-3" style="background-color: #85c441;"></center>
+      </div>
+    </form>
+
+        </p>
+
+    </div>
+    </body>
+    </html>

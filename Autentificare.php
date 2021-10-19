@@ -1,0 +1,92 @@
+<?php
+$host="localhost:3306";
+$user="Licenta";
+$parola="test";
+$bazaDeDate="licenta";
+
+
+$conexiune=mysqli_connect($host,$user,$parola,$bazaDeDate);
+
+$userCautat= $_POST["mail"];
+$parolaCautata=$_POST["parola"];
+$query="SELECT * FROM `user` WHERE `mail` = '".$userCautat."' AND `parola` = '".$parolaCautata."'";
+mysqli_select_db($conexiune,"licenta");
+$rezultate=mysqli_query($conexiune,$query);
+if(!$rezultate){
+    die("Nu am gasit date".mysqli_error());
+}
+if($rand=mysqli_fetch_assoc($rezultate)){
+   
+   session_start();
+   $_SESSION["ID"]=$rand["ID"];
+   $_SESSION["nume"]=$rand["Nume"];
+   $_SESSION["prenume"]=$rand["Prenume"];
+   $_SESSION["mail"]=$rand["mail"];
+   $_SESSION["profesor"]=$rand["profesor"];
+   
+
+
+    header("Location: http://localhost/Licenta/Acasa.html ");
+}
+else{
+   echo'<!doctype html>
+   <html lang="en">
+     <head>
+       <!-- Required meta tags -->
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+       <!-- Bootstrap CSS -->
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+       <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+       <title>Acasa</title>
+       <style>
+         body{
+           background-image:url("img/background-login.png");
+           background-size:cover;
+         }
+       </style>
+     </head>
+     <body>
+       <nav class="navbar navbar-expand-lg navbar-light " style="background-color:#85c441;font-family: \'Raleway\', sans-serif;">
+           <div class="container-fluid">
+             <a class="navbar-brand" href="#">AIA</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+             </button>
+             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+               <div class="navbar-nav">
+               </div>
+             </div>
+           </div>
+         </nav>
+     
+       <div class="container">
+         <div class="d-flex justify-content-center">
+           <div class="row">
+             <div class="col">
+           <img src="img/utcb.png" class="mt-5" style="width:350px"></div>  
+         <div class="col">  <h1 class="my-5 text-center">Autentificare esuata</h1>
+          <p>Mail sau parola incorecta.Te rugam sa incerci din nou.</p>
+          <a class="btn btn-primary" href="Autentificare.html" >Incearca din nou</a>
+        </div></div>
+       </div>
+   </div>
+       <!-- Optional JavaScript; choose one of the two! -->
+   
+       <!-- Option 1: Bootstrap Bundle with Popper -->
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+   
+       <!-- Option 2: Separate Popper and Bootstrap JS -->
+       <!--
+       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+       -->
+     </body>
+   </html>';
+}
+
+
+
+?>
