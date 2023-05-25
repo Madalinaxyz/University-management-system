@@ -1,4 +1,8 @@
+# University-management-sysytem
+## Introduction
+
 For my senior thesis I chose to implement a university management system by mixing two of the university websites:the one displaying the recent news and enrollments in projects,and the moodle platform,where we take exams and find the courses.I customized the website with the university logo and the specific shade of green.
+## Implementation
 The first page contains the login form,where the user has the account received by the university ,using student/teacher roles.
 
 ![image](https://user-images.githubusercontent.com/62958497/236643275-91cc784e-8443-4a52-aaa4-ee120cc1bd21.png) 
